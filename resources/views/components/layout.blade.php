@@ -7,10 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ config('app.name') }}</title>
     <link rel="icon" type="image/png" href="{{ Vite::asset('resources/images/sputnik-16.png')  }}"/>
+
+    {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap"> --}}
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-black text-white">
+<body class="bg-black text-white font-hanken-grotesk">
     <div class="px-11">
         <nav class="flex justify-between items-center py-4 border-b border-white/10">
             <div>
@@ -20,14 +25,14 @@
             </div>
 
             <div class="space-x-5 font-bold">
-                <a href="#">My Origins</a>
-                <a href="#">Search</a>
-                <a href="#">Logs</a>
-                <a href="#">Profile</a>
+                <a href="#">Jobs</a>
+                <a href="#">Career</a>
+                <a href="#">Salaries</a>
+                <a href="#">Companies</a>
             </div>
 
             <div>
-                <a href="#">Add Origin</a>
+                <a href="#">Post a Job</a>
             </div>
         </nav>
 
