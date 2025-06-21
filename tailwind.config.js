@@ -12,8 +12,7 @@ export default {
                 "hanken-grotesk": ["Hanken Grotesk", "sans-serif"],
             },
             fontSize: {
-                "2xs": ".625rem", // 10px/16px
-                "4xs": "10px", // 10px/16px
+                "xs2": ".625rem", // = 10px/16px
             }
         },
     },
