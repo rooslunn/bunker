@@ -10,7 +10,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..700;1,100..700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap"
         rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -26,7 +27,7 @@
             </div>
 
             <div class="space-x-5 font-bold">
-                <a href="#">Jobs</a>
+                <a href="{{ route('jobs.index') }}">Jobs</a>
                 <a href="#">Career</a>
                 <a href="#">Salaries</a>
                 <a href="#">Companies</a>

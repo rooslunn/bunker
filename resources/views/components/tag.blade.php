@@ -8,7 +8,7 @@
     if ($size === 'base') {
         $classes .=  " px-5 pt-1 pb-2 text-sm ";
     } else if ($size === 'small') {
-        $classes .=  " px-3 pt-1 pb-2 text-xs ";
+        $classes .=  " px-3 pt-1 pb-2 text-2xs ";
     }
 @endphp
 

@@ -6,7 +6,8 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [JobController::class, 'index']);
+Route::get('/', [JobController::class, 'index'])->name('jobs.index');
+Route::get('/jobs/create', fn() => 'Create')->name('jobs.create');
 
 Route::get('/search', SearchController::class)->name('search');
 
@@ -18,6 +19,3 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [SessionController::class, 'store']);
 });
 Route::delete('/login', [SessionController::class, 'destroy'])->middleware('auth')->name('logout');
-
-// jobs
-Route::get('/jobs/create', fn() => 'Create')->name('jobs.create');
