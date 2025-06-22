@@ -4,10 +4,11 @@
         <section class="text-center pt-5">
             <h1 class="font-bold text-4xl">Let's find your next job</h1>
 
-            <form action="" class="mt-7">
-                <input type="text" placeholder="Web Developer..."
-                    class="rounded-xl bg-white/11 border-white/17 px-5 py-5 w-full max-w-xl">
-            </form>
+            {{-- Search --}}
+            <x-forms.form action="{{ route('search') }}" class="mt-5">
+                <x-forms.input :label="false" name="q" placeholder="Search for title..." />
+            </x-forms.form>
+
         </section>
 
         <section class="pt-13">

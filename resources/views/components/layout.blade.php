@@ -32,9 +32,18 @@
                 <a href="#">Companies</a>
             </div>
 
-            <div>
-                <a href="#">Post a Job</a>
-            </div>
+            @auth
+                <div>
+                    <a href="{{ route('jobs.create') }}">Post a Job</a>
+                </div>
+            @endauth
+
+            @guest
+                <div class="space-x-5 font-bold">
+                    <a href="{{ route('register') }}">Sign Up</a>
+                    <a href="{{ route('login') }}">Log In</a>
+                </div>
+            @endguest
         </nav>
 
         <main class="mt-11 max-w-[986px] mx-auto">
