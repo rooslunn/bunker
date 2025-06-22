@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ config('app.name') }}</title>
-    <link rel="icon" type="image/png" href="{{ Vite::asset('resources/images/sputnik-16.png') }}" />
+    <link rel="icon" type="image/png" href="{{ Vite::asset('resources/images/bunker-16.png') }}" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
         <nav class="flex justify-between items-center py-4 border-b border-white/10">
             <div>
                 <a href="/">
-                    <img src="{{ Vite::asset('resources/images/sputnik-32.png') }}" alt="">
+                    <img src="{{ Vite::asset('resources/images/bunker-128.png') }}" alt="">
                 </a>
             </div>
 
