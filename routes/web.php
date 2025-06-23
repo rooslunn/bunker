@@ -4,11 +4,20 @@ use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
+// jobs
 Route::get('/', [JobController::class, 'index'])->name('jobs.index');
-Route::get('/jobs/create', fn() => 'Create')->name('jobs.create');
+Route::middleware('auth')->group(function () {
+    Route::get('/jobs/create', [JobController::class, 'create'])->name('jobs.create');
+    Route::post('/jobs', [JobController::class, 'store'])->name('jobs.store');
+});
 
+// tags
+Route::get('/tags/{tag:name}', TagController::class)->name('tags.show');
+
+// search
 Route::get('/search', SearchController::class)->name('search');
 
 // auth

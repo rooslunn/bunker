@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
-class SessionController extends Controller
+final class SessionController extends Controller
 {
-    public function create()
+    public function create(): \Illuminate\Contracts\View\View
     {
         return view('auth.login');
     }
 
-    public function store(LoginRequest $request)
+    public function store(LoginRequest $request): \Illuminate\Http\RedirectResponse
     {
         $login_data = $request->validated();
 
@@ -29,9 +28,10 @@ class SessionController extends Controller
         return redirect('/');
     }
 
-    public function destroy()
+    public function destroy(): \Illuminate\Http\RedirectResponse
     {
-        Auth::logout(); 
+        Auth::logout();
+
         return redirect('/');
     }
 }

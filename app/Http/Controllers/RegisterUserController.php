@@ -2,25 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Http\Requests\RegisterUserRequest;
+use App\Models\User;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 
-class RegisterUserController extends Controller
+final class RegisterUserController extends Controller
 {
-    public function create()
+    public function create(): \Illuminate\Contracts\View\View
     {
         return view('auth.register');
     }
 
-    public function store(RegisterUserRequest $request)
+    public function store(RegisterUserRequest $request): \Illuminate\Http\RedirectResponse
     {
-        $form_data = collect($request->validated());
+        $form_data = $request->validated();
 
-        $user_data = $form_data->only(['name', 'email', 'password'])->toArray();
+        $user_data = Arr::only($form_data, ['name', 'email', 'password']);
         $user = User::create($user_data);
 
-        $employer_data = $form_data->only(['employer', 'logo'])->toArray();
+        $employer_data = Arr::only($form_data, ['employer', 'logo']);
         $logo_path = $request['logo']->store('logos');
 
         $user->employer()->create([

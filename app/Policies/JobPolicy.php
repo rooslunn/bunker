@@ -4,9 +4,8 @@ namespace App\Policies;
 
 use App\Models\Job;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
-class JobPolicy
+final class JobPolicy
 {
     /**
      * Determine whether the user can view any models.

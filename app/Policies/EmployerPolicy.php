@@ -4,9 +4,8 @@ namespace App\Policies;
 
 use App\Models\Employer;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
-class EmployerPolicy
+final class EmployerPolicy
 {
     /**
      * Determine whether the user can view any models.

@@ -4,8 +4,11 @@
     <div class="self-start text-sm">{{ $job->employer->name }}</div>
 
     <div class="py-7">
-        <h3 class="font-bold text-xl group-hover:text-blue-500 transition-colors duration-500">{{ $job->title }}</h3>
-        <p class="text-sm mt-4">{{ $job->salary }}</p>
+        <h3 class="font-bold text-xl group-hover:text-blue-500 transition-colors duration-500">
+            <a href="{{ $job->url }}" target="_blank">
+                {{ $job->title }}
+            </a>
+        </h3>
     </div>
 
     <div class="flex justify-between items-center mt-auto">
@@ -15,6 +18,6 @@
             @endforeach
         </div>
 
-        <x-employee-logo :width="32" />
+        <x-employee-logo :width="32" :employer="$job->employer" />
     </div>
 </x-panel>

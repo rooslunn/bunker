@@ -22,7 +22,7 @@
         <nav class="flex justify-between items-center py-4 border-b border-white/10">
             <div>
                 <a href="/">
-                    <img src="{{ Vite::asset('resources/images/bunker-128.png') }}" alt="">
+                    <img class="w-32" src="{{ Vite::asset('resources/images/bunker-1-512.png') }}" alt="">
                 </a>
             </div>
 
@@ -34,8 +34,13 @@
             </div>
 
             @auth
-                <div>
+                <div class="space-x-7 font-bold flex">
                     <a href="{{ route('jobs.create') }}">Post a Job</a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @method('DELETE')
+                        @csrf
+                        <button>Log Out</button>
+                    </form>
                 </div>
             @endauth
 

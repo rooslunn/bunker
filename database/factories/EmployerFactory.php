@@ -15,6 +15,7 @@ class EmployerFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    #[\Override]
     public function definition(): array
     {
         return [
