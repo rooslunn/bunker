@@ -1,5 +1,11 @@
 @props(['employer', 'width' => 100])
 
+@php
+    $logo = sprintf("http://picsum.photos/seed/%d/%d", rand(1, 1000000), $width);
+    if ($employer->logo) {
+        $logo = asset($employer->logo);
+    }
+@endphp
+
 {{-- todo: arty storage:link --}}
-<img src="{{ asset($employer->logo) }}" class="rounded-xl" alt="" width="{{ $width }}"/>
-{{-- <img src="http://picsum.photos/seed/{{ rand(1, 1000000) }}/{{ $width }}" class="rounded-xl" alt=""> --}}
+<img src="{{ $logo }}" class="rounded-xl" alt="" width="{{ $width }}"/>
