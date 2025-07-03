@@ -19,8 +19,8 @@ final class JobController extends Controller
         // attention: always check for n+1
         $jobsAll = Job::latest()->with(['employer', 'tags'])->get()->groupBy('featured');
 
-        $jobs = $jobsAll[1];
-        $featuredJobs = $jobsAll[0];
+        $jobs = $jobsAll;
+        $featuredJobs = $jobsAll;
 
         $tags = Tag::all();
 
