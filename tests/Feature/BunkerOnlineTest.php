@@ -1,6 +1,5 @@
 <?php
 
-use Database\Seeders\JobSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(RefreshDatabase::class);
