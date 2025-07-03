@@ -25,13 +25,13 @@ final class SessionController extends Controller
 
         request()->session()->regenerate();
 
-        return redirect('/');
+        return redirect(route('jobs.index'));
     }
 
     public function destroy(): \Illuminate\Http\RedirectResponse
     {
         Auth::logout();
 
-        return redirect('/');
+        return redirect(route('jobs.index'));
     }
 }
