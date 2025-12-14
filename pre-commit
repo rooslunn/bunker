@@ -1,0 +1,3 @@
+# pint phpsta and psalm check
+#./vendor/bin/pint && ./vendor/bin/phpstan && ./vendor/bin/psalm && php artisan test
+#./vendor/bin/pint && ./vendor/bin/phpstan && php artisan test --coverage
